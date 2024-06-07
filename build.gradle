@@ -31,6 +31,7 @@ repositories {
 ext {
 	set('springCloudVersion', "2023.0.0")
 	set('testcontainersVersion', "1.17.3")
+	set('testKeycloakVersion', "2.3.0")
 }
 
 dependencies {
@@ -47,6 +48,9 @@ dependencies {
 	testImplementation 'org.testcontainers:postgresql'
 	testImplementation 'org.testcontainers:r2dbc'
 	testImplementation 'com.squareup.okhttp3:mockwebserver'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'org.testcontainers:junit-jupiter'
+	testImplementation "com.github.dasniko:testcontainers-keycloak:${testKeycloakVersion}"
 
 	runtimeOnly 'org.flywaydb:flyway-core'
 	runtimeOnly 'org.postgresql:postgresql'
